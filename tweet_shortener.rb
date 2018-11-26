@@ -20,4 +20,9 @@ def dictionary
     "at" => '@',
     "and" => '&'
   }
+  def bulk_tweet_shortener(bulk)
+  bulk.map do |tweet|
+      puts word_substituter(tweet)
+  end
+end
 end
