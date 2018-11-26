@@ -20,6 +20,13 @@ def dictionary
     "at" => '@',
     "and" => '&'
   }
+  
+def word_substituter(words)
+  result = words.split(" ").map do |word|
+    word = dictionary.keys.include?(word) ? dictionary[word] : word
+  end
+  result.join(" ")
+  
   def bulk_tweet_shortener(bulk)
   bulk.map do |tweet|
       puts word_substituter(tweet)
