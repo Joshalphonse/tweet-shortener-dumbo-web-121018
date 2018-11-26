@@ -26,10 +26,18 @@ def word_substituter(words)
     word = dictionary.keys.include?(word) ? dictionary[word] : word
   end
   result.join(" ")
-  
-  def bulk_tweet_shortener(bulk)
+end
+
+def bulk_tweet_shortener(bulk)
   bulk.map do |tweet|
       puts word_substituter(tweet)
   end
 end
+
+def selective_tweet_shortener(tweet)
+    tweet =  tweet.length > 140 ? word_substituter(tweet) : tweet
+end
+
+def shortened_tweet_truncator(tweet)
+  tweet = tweet.length > 140 ? "#{tweet[0...137]}...": tweet
 end
