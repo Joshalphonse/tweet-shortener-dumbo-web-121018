@@ -1,4 +1,3 @@
-# Write your code here.
 def dictionary
   {
     "hello" => 'hi',
@@ -20,7 +19,8 @@ def dictionary
     "at" => '@',
     "and" => '&'
   }
-  
+end
+
 def word_substituter(words)
   result = words.split(" ").map do |word|
     word = dictionary.keys.include?(word) ? dictionary[word] : word
